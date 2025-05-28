@@ -5,7 +5,7 @@ metadata:
   labels:
     app: flask-adivina
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: flask-adivina
