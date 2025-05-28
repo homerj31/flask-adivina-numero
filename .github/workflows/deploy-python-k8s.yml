@@ -1,4 +1,4 @@
-name: Deploy to Private Kubernetes
+name: Deploy to Private Kubernetes python app
 
 on:
   push:

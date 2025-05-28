@@ -1,4 +1,4 @@
-name: Deploy to Private Kubernetes
+name: Deploy to Private Kubernetes mysql container
 
 on:
   push:
