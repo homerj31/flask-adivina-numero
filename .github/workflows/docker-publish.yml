@@ -2,11 +2,11 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ master ]  # Cambia si usas otra rama
-  path:
-    - Dockerfile
-    - app.py
-
+    branches:
+      - master
+    paths:
+      - 'Dockerfile'
+      - 'app.py'
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
