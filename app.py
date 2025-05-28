@@ -36,7 +36,8 @@ def guess_number():
                 message = f"¡Correcto! El número era {number}. Se ha generado uno nuevo para ti."
                 session['number'] = random.randint(1, 100)
         except ValueError:
-            message = "Por favor ingresa un número válido."
+            message = "Por favor ingresa un número válido, CAPULLO."
+
 
     return render_template_string(HTML_PAGE, message=message)
 
