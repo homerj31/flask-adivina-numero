@@ -26,5 +26,14 @@ jobs:
     - name: Test cluster access
       run: kubectl get nodes
 
-    - name: Deploy to Kubernetes
+    - name: Create MySQL Secret in Kubernetes
+      run: |
+        kubectl create secret generic mysql-secret \
+          --from-literal=MYSQL_USER="${{ secrets.MYSQL_USER }}" \
+          --from-literal=MYSQL_PASSWORD="${{ secrets.MYSQL_PASSWORD }}" \
+          --from-literal=MYSQL_ROOT_PASSWORD="${{ secrets.MYSQL_ROOT_PASSWORD }}" \
+          --from-literal=MYSQL_DATABASE="${{ secrets.MYSQL_DATABASE }}" \
+          --dry-run=client -o yaml | kubectl apply -f -
+
+    - name: Deploy all Kubernetes resources
       run: kubectl apply -f k8s/
