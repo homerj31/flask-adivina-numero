@@ -3,6 +3,9 @@ name: Build and Push Docker Image
 on:
   push:
     branches: [ master ]  # Cambia si usas otra rama
+  path:
+    - Dockerfile
+    - app.py
 
 jobs:
   build-and-push:
