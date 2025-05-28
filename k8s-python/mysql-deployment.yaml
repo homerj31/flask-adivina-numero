@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-adivina-deployment
+  labels:
+    app: flask-adivina
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-adivina
+  template:
+    metadata:
+      labels:
+        app: flask-adivina
+    spec:
+      containers:
+        - name: flask-adivina-container
+          image: homerj31/flask-adivina-numero:latest
+          ports:
+            - containerPort: 5000
